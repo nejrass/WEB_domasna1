@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контролен панел за паметен дом</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        section {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            color: #2c3e50;
+        }
+        .sensor-box {
+            background: #ecf0f1;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        details {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Контролен панел за паметен дом</h1>
+        <p>Мониторинг и управување со сензорите во реално време</p>
+    </header>
+
+    <nav>
+        <a href="#dnevna">Дневна</a>
+        <a href="#spalna">Спална</a>
+        <a href="#kujna">Кујна</a>
+        <a href="#gradina">Градина</a>
+        <a href="#notifikacii">Нотификации</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- ДНЕВНА -->
+        <section id="dnevna">
+            <h2>Дневна соба</h2>
+            
+            <div class="sensor-box">
+                <h3>Сензор за температура</h3>
+                <p>Тековна вредност: <data value="26"><strong>26°C</strong></data> (Нормална зона: 20°C - 24°C)</p>
+                <p>Статус: Вклучен | Батерија: 85%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за влажност</h3>
+                <p>Тековна вредност: <meter value="45" min="0" max="100" low="30" high="70">45%</meter> (45%)</p>
+                <p>Статус: Вклучен | Батерија: 90%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за присуство (Движење)</h3>
+                <p>Тековна состојба: <output>Детектирано движење</output></p>
+                <p>Статус: Вклучен | Батерија: 40%</p>
+            </div>
+        </section>
+
+        <!-- СПАЛНА -->
+        <section id="spalna">
+            <h2>Спална соба</h2>
+            
+            <div class="sensor-box">
+                <h3>Сензор за температура</h3>
+                <p>Тековна вредност: <data value="21"><strong>21°C</strong></data> (Нормална зона: 18°C - 22°C)</p>
+                <p>Статус: Вклучен | Батерија: 95%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за квалитет на воздух (CO2)</h3>
+                <p>Ниво на загаденост: <progress value="300" max="1000">300 ppm</progress> (300 ppm)</p>
+                <p>Статус: Вклучен | Батерија: 70%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за светло</h3>
+                <p>Осветленост: <samp>Ниска (Ноќен режим)</samp></p>
+                <p>Статус: Вклучен | Батерија: 60%</p>
+            </div>
+        </section>
+
+        <!-- КУЈНА -->
+        <section id="kujna">
+            <h2>Кујна</h2>
+            
+            <div class="sensor-box">
+                <h3>Сензор за чад</h3>
+                <p>Состојба: <mark>Нема чад</mark></p>
+                <p>Статус: Вклучен | Батерија: 100%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за истекување на вода</h3>
+                <p>Состојба: <output>Суво</output></p>
+                <p>Статус: Вклучен | Батерија: 55%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за потрошувачка на шпорет</h3>
+                <p>Моќност: <data value="1.2"><strong>1.2 kW</strong></data></p>
+                <p>Статус: Исклучен | Батерија: 20%</p>
+            </div>
+        </section>
+
+        <!-- ГРАДИНА -->
+        <section id="gradina">
+            <h2>Градина</h2>
+            
+            <div class="sensor-box">
+                <h3>Сензор за влажност на почва</h3>
+                <p>Влажност: <meter value="20" min="0" max="100" low="30" high="70">20% (Ниска)</meter></p>
+                <p>Статус: Вклучен | Батерија: 45%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за надворешна температура</h3>
+                <p>Тековна вредност: <data value="15"><strong>15°C</strong></data></p>
+                <p>Статус: Вклучен | Батерија: 80%</p>
+            </div>
+
+            <div class="sensor-box">
+                <h3>Сензор за светлина (Фоторезистор)</h3>
+                <p>Интензитет: <samp>Висок (Сончево)</samp></p>
+                <p>Статус: Вклучен | Батерија: 90%</p>
+            </div>
+        </section>
+
+        <!-- НОТИФИКАЦИИ -->
+        <section id="notifikacii">
+            <h2>Системски нотификации и предупредувања</h2>
+            
+            <details>
+                <summary>Предупредување: Температурата во Дневна е надвор од нормала (26°C)</summary>
+                <p>Детал: Забележано е зголемување на температурата во дневната соба над зададената граница од 24°C. Се препорачува вклучување на клима уредот.</p>
+            </details>
+
+            <details>
+                <summary>Предупредување: Влажноста на почвата во Градина е критично ниска (20%)</summary>
+                <p>Детал: Влажноста падна под 30%. Автоматски се активира системот за наводнување.</p>
+            </details>
+        </section>
+
+    </div>
+
+</body>
+</html>
